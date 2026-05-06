@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   return (
@@ -19,9 +20,12 @@ export default function HomePage() {
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <p className="text-gray-600">이름, 지역, 희망 직종, 경력을 입력하세요.</p>
-            <Button asChild size="lg" className="text-lg py-6">
-              <Link href="/register">등록하러 가기</Link>
-            </Button>
+            <Link
+              href="/register"
+              className={cn(buttonVariants({ size: "lg" }), "text-lg py-6")}
+            >
+              등록하러 가기
+            </Link>
           </CardContent>
         </Card>
 
@@ -31,9 +35,12 @@ export default function HomePage() {
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <p className="text-gray-600">나에게 맞는 일자리 추천 목록을 확인하세요.</p>
-            <Button asChild size="lg" variant="outline" className="text-lg py-6">
-              <Link href="/recommendations">추천 목록 보기</Link>
-            </Button>
+            <Link
+              href="/recommendations"
+              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "text-lg py-6")}
+            >
+              추천 목록 보기
+            </Link>
           </CardContent>
         </Card>
 
@@ -43,9 +50,12 @@ export default function HomePage() {
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <p className="text-gray-600">매칭 현황을 한눈에 관리하세요.</p>
-            <Button asChild size="lg" variant="outline" className="text-lg py-6">
-              <Link href="/admin">대시보드 열기</Link>
-            </Button>
+            <Link
+              href="/admin"
+              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "text-lg py-6")}
+            >
+              대시보드 열기
+            </Link>
           </CardContent>
         </Card>
       </div>
